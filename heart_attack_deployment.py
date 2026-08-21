@@ -35,8 +35,6 @@ df = pd.DataFrame({
     "Troponin": troponin
 })
 
-})
-
 if st.button("predict heart attack rate"):
     prediction = model.predict(df)[0]
 
