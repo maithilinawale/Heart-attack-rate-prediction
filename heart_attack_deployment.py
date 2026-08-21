@@ -13,7 +13,7 @@ import joblib
 
 model = joblib.load("heart_attack.pkl")
 
-st.title("Heart Attack Predicion")
+st.title("Heart Attack Prediction")
 
 age = st.number_input("Age")
 gender = st.number_input("Gender")
@@ -21,10 +21,10 @@ heart_rate = st.number_input("Heart rate")
 systolic_blood_pressure = st.number_input("Systolic blood pressure")
 diastolic_blood_pressure = st.number_input("Diastolic blood pressure")
 blood_sugar = st.number_input("Blood sugar")
-ck_mb = st.number_input("CK_MB")
+ck_mb = st.number_input("CK-MB")
 troponin = st.number_input("Troponin")
 
-df = pd.DataFrame({
+df = pd.DataFrame([{
     "Age": age,
     "Gender": gender,
     "Heart rate": heart_rate,
@@ -33,12 +33,18 @@ df = pd.DataFrame({
     "Blood sugar": blood_sugar,
     "CK-MB": ck_mb,
     "Troponin": troponin
-})
+}])
 
-if st.button("predict heart attack rate"):
+if st.button("Predict Heart Attack"):
+
+    # Check feature names
+    st.write("Model features:", model.get_booster().feature_names)
+    st.write("Input features:", df.columns.tolist())
+
     prediction = model.predict(df)[0]
 
     if prediction == 0:
         st.write("Heart Attack predicted")
     else:
         st.write("Heart Attack not predicted")
+
