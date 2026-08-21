@@ -33,7 +33,7 @@ df = pd.DataFrame({
     "Blood sugar": blood_sugar,
     "CK-MB": ck_mb,
     "Troponin": troponin
-}])
+})
 
 })
 
