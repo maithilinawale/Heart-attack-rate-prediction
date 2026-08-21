@@ -37,9 +37,6 @@ df = pd.DataFrame([{
 
 if st.button("Predict Heart Attack"):
 
-    # Check feature names
-    st.write("Model features:", model.get_booster().feature_names)
-    st.write("Input features:", df.columns.tolist())
 
     prediction = model.predict(df)[0]
 
