@@ -25,14 +25,16 @@ ck_mb = st.number_input("CK_MB")
 troponin = st.number_input("Troponin")
 
 df = pd.DataFrame({
-    "age":[age],
-    "gender":[gender],
-    "heart rate":[heart_rate],
-    "systolic blood pressure":[systolic_blood_pressure],
-    "diastolic blood pressure":[diastolic_blood_pressure],
-    "blood sugar":[blood_sugar],
-    "ck-mb":[ck_mb],
-    "troponin":[troponin]
+    "Age": age,
+    "Gender": gender,
+    "Heart rate": heart_rate,
+    "Systolic blood pressure": systolic_blood_pressure,
+    "Diastolic blood pressure": diastolic_blood_pressure,
+    "Blood sugar": blood_sugar,
+    "CK-MB": ck_mb,
+    "Troponin": troponin
+}])
+
 })
 
 if st.button("predict heart attack rate"):
